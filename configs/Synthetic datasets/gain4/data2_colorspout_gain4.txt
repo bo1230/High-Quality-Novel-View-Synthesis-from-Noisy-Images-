@@ -1,0 +1,13 @@
+model=logs/gain4/data2_colorspout_gain4_
+model_path=logs/gain4/data2_colorspout_gain4_
+source_path = data/gain4/data2_colorspout
+test_path = data/gain4/data2_colorspout
+
+gpu_id = 2
+
+llffhold=8
+
+iterations=3000
+
+port=6012
+eval=True

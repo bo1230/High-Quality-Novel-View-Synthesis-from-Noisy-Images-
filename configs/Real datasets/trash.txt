@@ -1,0 +1,13 @@
+model=logs/trash_
+model_path=logs/trash_
+source_path = data/trash
+test_path = data/trash
+
+gpu_id = 4
+
+llffhold=8
+
+iterations=30000
+
+port=2219
+eval=True

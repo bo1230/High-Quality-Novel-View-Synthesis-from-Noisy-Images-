@@ -1,0 +1,13 @@
+model=logs/gain4/data5_piano_gain4_
+model_path=logs/gain4/data5_piano_gain4_
+source_path = data/gain4/data5_piano
+test_path = data/gain4/data5_piano
+
+gpu_id = 7
+
+llffhold=8
+
+iterations=3000
+
+port=6017
+eval=True

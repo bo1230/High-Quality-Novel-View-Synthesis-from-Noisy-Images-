@@ -1,0 +1,13 @@
+model=logs/handbag_
+model_path=logs/handbag_
+source_path = data/handbag
+test_path = data/handbag
+
+gpu_id = 8
+
+llffhold=8
+
+iterations=30000
+
+port=2218
+eval=True

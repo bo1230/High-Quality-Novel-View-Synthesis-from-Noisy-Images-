@@ -1,0 +1,13 @@
+model=logs/gain8/data2_benchflower_gain8
+model_path=logs/gain8/data2_benchflower_gain8
+source_path = data/gain8/data2_benchflower
+test_path = data/gain8/data2_benchflower
+
+gpu_id = 0
+
+llffhold=8
+
+iterations=3000
+
+port=6051
+eval=True

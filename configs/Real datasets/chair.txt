@@ -1,0 +1,15 @@
+model=logs/chair_pre
+model_path=logs/chair_pre
+source_path = data/chair
+test_path = data/chair
+
+gpu_id = 8
+
+llffhold=8
+
+iterations=20000
+
+white_background = true
+
+port=6028
+eval=True

@@ -1,0 +1,13 @@
+model=logs/gain2/data4_butcher_gain2_
+model_path=logs/gain2/data4_butcher_gain2_
+source_path = data/gain2/data4_butcher
+test_path = data/gain2/data4_butcher
+
+gpu_id = 5
+
+llffhold=8
+
+iterations=3000
+
+port=6015
+eval=True
