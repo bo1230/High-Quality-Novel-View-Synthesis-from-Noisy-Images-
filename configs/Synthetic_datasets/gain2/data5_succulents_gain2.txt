@@ -1,0 +1,13 @@
+model=logs/gain2/data5_succulents_gain2_
+model_path=logs/gain2/data5_succulents_gain2_
+source_path = data/gain2/data5_succulents
+test_path = data/gain2/data5_succulents
+
+gpu_id = 0
+
+llffhold=8
+
+iterations=3000
+
+port=6018
+eval=True

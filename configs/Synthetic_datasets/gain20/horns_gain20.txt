@@ -1,0 +1,13 @@
+model=logs/gain20/horns_gain20
+model_path=logs/gain20/horns_gain20
+source_path = data/gain20/horns
+test_path = data/gain20/horns
+
+gpu_id = 4
+
+llffhold=8
+
+iterations=3000
+
+port=5014
+eval=True

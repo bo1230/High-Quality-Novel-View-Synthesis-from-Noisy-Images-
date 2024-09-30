@@ -1,0 +1,13 @@
+model=logs/bench_
+model_path=logs/bench_
+source_path = data/bench
+test_path = data/bench
+
+gpu_id = 6
+
+llffhold=8
+
+iterations=30000
+
+port=2216
+eval=True

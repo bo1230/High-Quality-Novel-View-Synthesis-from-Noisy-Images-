@@ -1,0 +1,13 @@
+model=logs/gain4/data2_succtrough_gain4_
+model_path=logs/gain4/data2_succtrough_gain4_
+source_path = data/gain4/data2_succtrough
+test_path = data/gain4/data2_succtrough
+
+gpu_id = 0
+
+llffhold=8
+
+iterations=3000
+
+port=6013
+eval=True

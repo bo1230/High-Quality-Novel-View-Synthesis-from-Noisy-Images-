@@ -1,0 +1,13 @@
+model=logs/gain20/flower_gain20
+model_path=logs/gain20/flower_gain20
+source_path = data/gain20/flower
+test_path = data/gain20/flower
+
+gpu_id = 2
+
+llffhold=8
+
+iterations=3000
+
+port=8012
+eval=True

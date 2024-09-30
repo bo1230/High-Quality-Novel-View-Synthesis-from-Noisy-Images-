@@ -1,0 +1,13 @@
+model=logs/gain16/data2_colorspout_gain16_
+model_path=logs/gain16/data2_colorspout_gain16_
+source_path = data/gain16/data2_colorspout
+test_path = data/gain16/data2_colorspout
+
+gpu_id = 2
+
+llffhold=8
+
+iterations=3000
+
+port=6012
+eval=True

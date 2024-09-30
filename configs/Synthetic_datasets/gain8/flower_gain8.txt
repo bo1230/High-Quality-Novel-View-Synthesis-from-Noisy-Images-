@@ -1,0 +1,13 @@
+model=logs/gain8/flower_gain8_
+model_path=logs/gain8/flower_gain8_
+source_path = data/gain8/flower
+test_path = data/gain8/flower
+
+gpu_id = 2
+
+llffhold=8
+
+iterations=3000
+
+port=8012
+eval=True

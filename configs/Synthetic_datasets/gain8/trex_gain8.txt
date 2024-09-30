@@ -1,0 +1,13 @@
+model=logs/gain8/trex_gain8_
+model_path=logs/gain8/trex_gain8_
+source_path = data/gain8/trex
+test_path = data/gain8/trex
+
+gpu_id = 9
+
+llffhold=8
+
+iterations=3000
+
+port=2018
+eval=True

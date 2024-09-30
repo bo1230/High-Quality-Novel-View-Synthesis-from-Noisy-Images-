@@ -1,0 +1,13 @@
+model=logs/gain8/data3_fenceflower_gain8_
+model_path=logs/gain8/data3_fenceflower_gain8_
+source_path = data/gain8/data3_fenceflower
+test_path = data/gain8/data3_fenceflower
+
+gpu_id = 4
+
+llffhold=8
+
+iterations=3000
+
+port=6014
+eval=True
