@@ -23,11 +23,11 @@ Please refer to [IBRNet](https://github.com/googleinterns/IBRNet) and [LLFF](htt
 ## Training
 Training with synthetic datasets
 ```
-python train.py --config configs/synthetic_datasets/gain1/data2_benchflower_gain1.txt
+python train.py --config configs/Synthetic_datasets/gain1/data2_benchflower_gain1.txt
 ```
 Training with real datasets
 ```
-python train.py --config configs/real_datasets/trash.txt
+python train.py --config configs/Real_datasets/trash.txt
 ```
  
 
