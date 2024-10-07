@@ -159,12 +159,12 @@ class GDTD(nn.Module):
         super(GDTD, self).__init__()
 
         self.scale_idx = 0
-        n_feats = 48
+        n_feats = 32
         n_colors = 3
         kernel_size = 3
         act = nn.ReLU(True)
 
-        self.head1 = conv(n_colors, n_feats, kernel_size)
+        self.rgb = conv(n_colors, n_feats, kernel_size)
         self.noise_extract = UNet(3,3)
         self.head1_1 = ResBlock(conv, 64, kernel_size, act=act)
 
@@ -174,7 +174,7 @@ class GDTD(nn.Module):
             torch.nn.Conv2d(64, 64, 1, bias=False), torch.nn.ReLU(),
             torch.nn.Conv2d(64, 1, 1, bias=False)
         )
-
+        self.embedding_camera = nn.Embedding(num_img, 16)
     def get_2d_emb(self, batch_size, x, y, out_ch, device): 
         out_ch = int(np.ceil(out_ch / 4) * 2)
         inv_freq = 1.0 / (10000 ** (torch.arange(0, out_ch, 2).float() / out_ch)).cuda()  
@@ -200,16 +200,19 @@ class GDTD(nn.Module):
 
         shuffle_rgb = image.unsqueeze(0)
         pos_enc = self.get_2d_emb(1, shuffle_rgb.shape[-2], shuffle_rgb.shape[-1], 16, device="cuda")
-     
-        noise1 = self.noise_extract(viewpoint_cam.original_image.unsqueeze(0))  
+        img_embed = self.embedding_camera(torch.LongTensor([img_idx]).cuda())[None]
+        img_embed = img_embed.expand(pos_enc.shape[0], pos_enc.shape[1], img_embed.shape[-1])
+        inp = torch.cat([img_embed,pos_enc],-1).permute(2,0,1)
+        
+        pre_noise = self.noise_extract(viewpoint_cam.original_image.unsqueeze(0))  
 
-        x = self.head1(image)
-        x = torch.cat([x, pos_enc.permute(2, 0, 1)], 0)  # 48+16=64
+        x = self.rgb(image)
+        x = torch.cat([x, inp], 0)  
         x = self.head1_1(x)    
         mask = self.mlp(x)    
         mask = torch.sigmoid(mask)
 
-        noise = mask * (viewpoint_cam.pre_noise) + (1 - mask) * noise1.squeeze()
+        noise = mask * (viewpoint_cam.pre_noise) + (1 - mask) * pre_noise.squeeze()
         noise_img = image + noise
         return noise_img, noise, mask
 
